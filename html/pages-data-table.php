@@ -249,7 +249,7 @@
                                                 <h4 class="card-title mt-2">Data Desa</h4>
                                                 <h6 class="card-subtitle">Data Table Desa</h6>
                                                 <div class="row text-center justify-content-center">
-                                                    <a class="btn btn-primary" href="pages-desa.php" role="button">Lihat</a>
+                                                    <a class="btn btn-primary text-white" href="pages-desa.php" role="button">Lihat</a>
                                                 </div>
                                             </center>
                                         </div>
@@ -268,7 +268,7 @@
                                                 <h4 class="card-title mt-2">Data Bencana Detail</h4>
                                                 <h6 class="card-subtitle">Data Table Bencana Detail</h6>
                                                 <div class="row text-center justify-content-center">
-                                                    <a class="btn btn-primary" href="pages-bencana-detail.php" role="button">Lihat</a>
+                                                    <a class="btn btn-primary text-white" href="pages-bencana-detail.php" role="button">Lihat</a>
                                                 </div>
                                             </center>
                                         </div>
@@ -291,7 +291,7 @@
                                                 <h4 class="card-title mt-2">Data Pelaporan</h4>
                                                 <h6 class="card-subtitle">Data Table Pelaporan</h6>
                                                 <div class="row text-center justify-content-center">
-                                                    <a class="btn btn-primary" href="pages-validation.php" role="button">Lihat</a>
+                                                    <a class="btn btn-primary text-white" href="pages-validation.php" role="button">Lihat</a>
                                                 </div>
                                             </center>
                                         </div>

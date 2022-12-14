@@ -225,7 +225,7 @@
                                                 <h4 class="card-title mt-2">Rekap Pelaporan</h4>
                                                 <h6 class="card-subtitle">Data Rekap Pelaporan</h6>
                                                 <div class="row text-center justify-content-center">
-                                                    <a class="btn btn-primary" href="pages-bencana.php" role="button">Lihat</a>
+                                                    <a class="btn btn-primary text-white" href="pages-bencana.php" role="button">Lihat</a>
                                                 </div>
                                             </center>
                                         </div>
@@ -244,7 +244,7 @@
                                                 <h4 class="card-title mt-2">Data Kritik & Saran</h4>
                                                 <h6 class="card-subtitle">Data Kritik & Saran</h6>
                                                 <div class="row text-center justify-content-center">
-                                                    <a class="btn btn-primary" href="kritik.php" role="button">Lihat</a>
+                                                    <a class="btn btn-primary text-white" href="kritik.php" role="button">Lihat</a>
                                                 </div>
                                             </center>
                                         </div>
