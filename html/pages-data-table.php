@@ -21,6 +21,11 @@
     <link href="../assets/plugins/c3-master/c3.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="css/style.min.css" rel="stylesheet">
+    <style>
+        .btn>.btn-primary:hover {
+            background-color: black;
+        }
+    </style>
 </head>
 
 <body>
@@ -225,7 +230,7 @@
                                                 <h4 class="card-title mt-2">Data Kecamatan</h4>
                                                 <h6 class="card-subtitle">Data Table Kecamatan</h6>
                                                 <div class="row text-center justify-content-center">
-                                                    <a class="btn btn-primary" href="pages-kecamatan.php" role="button">Lihat</a>
+                                                    <a class="btn btn-primary text-white" href="pages-kecamatan.php" role="button">Lihat</a>
                                                 </div>
                                             </center>
                                         </div>

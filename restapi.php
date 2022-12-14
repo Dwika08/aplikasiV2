@@ -85,7 +85,7 @@ function getBencanaDetail()
             'Rusak_Ringan' => $row['rusak_ringan'],
             'Rusak_Sedang' => $row['rusak_sedang'],
             'Rusak_Berat' => $row['rusak_berat'],
-            'Terancam' => $row ['terancam'],
+            'Terancam' => $row['terancam'],
             'Meninggal_Dunia' => $row['meninggal_dunia'],
             'Luka_luka' => $row['luka_luka'],
             'Kronologi' => $row['kronologi'],
@@ -298,27 +298,19 @@ function cariData()
     JOIN bencana_detail ON rekap_bencana.id_bencana_detail = bencana_detail.id_bencana_detail 
     WHERE year(tgl_kejadian) = '$tahun' and rekap_bencana.id_bencana_detail='$bencana' and status='1'");
 
-    if ($sql) {
-        while ($row = mysqli_fetch_array($sql)) {
-
-            if ($row > 0) {
-                $hasil[] = array(
-                    'id' => $row['id_rekap'],
-                    'lat' => $row['latitude'],
-                    'long' => $row['longitude'],
-                    'desa' => $row['desa'],
-                    'bencana' => $row['bencana'],
-                    'kecamatan' => $row['kecamatan'],
-                    'tanggal' => $row['tgl_kejadian']
-                );
-            } else {
-                $hasil = 'null';
-            }
-        }
-    } else {
-        $hasil = 'null';
+    $hasil = null;
+    foreach ($sql as $key => $row) {
+        $hasil[] = array(
+            'message' => 'success',
+            'id' => $row['id_rekap'],
+            'lat' => $row['latitude'],
+            'long' => $row['longitude'],
+            'desa' => $row['desa'],
+            'bencana' => $row['bencana'],
+            'kecamatan' => $row['kecamatan'],
+            'tanggal' => $row['tgl_kejadian']
+        );
     }
-
     $data = $hasil;
     echo json_encode($data);
 }
