@@ -30,8 +30,6 @@
     <?php
     session_start();
     if ($_SESSION['status'] != "login") {
-        header("location:index.php?pesan=belum_login");
-        $user_id = $_SESSION['id_admin'];
     }
     ?>
 
@@ -113,8 +111,7 @@
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img class="profile-pic me-2" src="../html/img/user/<?php echo $_SESSION['image']; ?>" />
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $_SESSION['nama']; ?></span>
+                                <img class="profile-pic me-2" src="../html/img/user/person-icon.png" />
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li>
@@ -216,54 +213,43 @@
                 <!-- ============================================================== -->
                 <!-- Row -->
                 <div class="row">
-                    <!-- Column -->
-                    <div class="col-lg-4 col-xlg-3 col-md-5">
-                        <div class="card">
-                            <div class="card-body profile-card">
-                                <center class="mt-4"> <img src="../html/img/user/<?php echo $_SESSION['image']; ?>" class="rounded-circle" width="150" />
 
-                                    <h4 class="card-title mt-2"><?php echo $_SESSION['nama']; ?></h4>
-                                    <h6 class="card-subtitle">account Manager</h6>
-
-                                </center>
-                            </div>
-                        </div>
-                    </div>
                     <!-- Column -->
                     <!-- Column -->
                     <div class="col-lg-8 col-xlg-9 col-md-7">
                         <div class="card">
                             <div class="card-body">
                                 <form action="update/updateAdmin.php" method="POST" class="form-horizontal form-material mx-2">
-                                    <div class="form-group">
-                                        <label class="col-md-12 mb-0">Full Name</label>
-                                        <div class="col-md-12">
-                                            <input type="text" value="<?php echo $_SESSION['nama']; ?>" class="form-control ps-0 form-control-line">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-12 mb-0">User</label>
-                                        <div class="col-md-12">
-                                            <input type="text" value="<?php echo $_SESSION['username']; ?>" class="form-control ps-0 form-control-line">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="example-email" class="col-md-12">Email</label>
-                                        <div class="col-md-12">
-                                            <input type="text" value="<?php echo $_SESSION['email']; ?>" class="form-control ps-0 form-control-line">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-12 mb-0">Password</label>
-                                        <div class="col-md-12">
-                                            <input type="password" value="<?php echo $_SESSION['password']; ?>" class="form-control ps-0 form-control-line">
-                                        </div>
-                                    </div>
                                     <?php
                                     $conn = mysqli_connect('localhost', 'root', '', 'aplikasi');
                                     $sql = mysqli_query($conn, "SELECT * FROM admin ");
                                     while ($row = mysqli_fetch_array($sql)) {
                                     ?>
+                                        <div class="form-group">
+                                            <label class="col-md-12 mb-0">Full Name</label>
+                                            <div class="col-md-12">
+                                                <input type="text" value="<?php echo $row['nama']; ?>" class="form-control ps-0 form-control-line">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-12 mb-0">User</label>
+                                            <div class="col-md-12">
+                                                <input type="text" value="<?php echo $row['username']; ?>" class="form-control ps-0 form-control-line">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="example-email" class="col-md-12">Email</label>
+                                            <div class="col-md-12">
+                                                <input type="text" value="<?php echo $row['email']; ?>" class="form-control ps-0 form-control-line">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-12 mb-0">Password</label>
+                                            <div class="col-md-12">
+                                                <input type="password" value="<?php echo $row['password']; ?>" class="form-control ps-0 form-control-line">
+                                            </div>
+                                        </div>
+
                                         <div class="form-group">
                                             <div class="col-sm-12 d-flex">
                                                 <a href="#" data-bs-toggle="modal" data-bs-target="#edit<?php echo $row['id_admin']; ?>">Edit</a>
@@ -340,18 +326,11 @@
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label">Password</label>
-                                <input type="text" class="form-control" name="password" id="password" value="<?php echo $row['password'] ?>">
+                                <input type="password" class="form-control" name="password" id="password" value="<?php echo $row['password'] ?>">
                             </div>
                             <div class="mb-3">
                                 <label for="username" class="form-label">Email</label>
                                 <input type="text" class="form-control" name="email" id="email" value="<?php echo $row['email'] ?>">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="foto">Foto</label>
-                                <input type="file" class="form-control-file" id="foto" placeholder="foto" autocomplete="off" required="required" name="foto">
-                                *gambar sebelumnya <br>
-                                <img src="../html/img/user/<?= $row['image'] ?>" alt="<?= $row['image'] ?>" width="100%" class="mt-2">
                             </div>
 
                     </div>

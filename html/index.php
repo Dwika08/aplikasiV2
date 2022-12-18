@@ -36,19 +36,6 @@
                     <span class="login100-form-title">
                         Selamat Datang <br> di SiPENA
                     </span>
-                    <?php
-                    if (isset($_GET['pesan'])) {
-                        if ($_GET['pesan'] == "gagal") {
-                            echo '<div class="alert alert-primary" role="alert"> Password anda salah</div>';
-                        } else if ($_GET['pesan'] == "logout") {
-                            echo
-                            '<div class="alert alert-dangger" role="alert"> Anda Berhasil Log out!</div>';
-                        } else if ($_GET['pesan'] == "belum_login") {
-                            echo
-                            '<div class="alert alert-primary" role="alert"> Anda Belum Login!</div>';
-                        }
-                    }
-                    ?>
                     <div class="wrap-input100 validate-input">
                         <input class="input100" type="text" name="username" id="username" placeholder="Username">
                         <span class="focus-input100"></span>
@@ -97,4 +84,5 @@
 <!--===============================================================================================-->
 <script src="js/main.js"></script>
 </body>
+
 </html>

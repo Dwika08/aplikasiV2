@@ -2,24 +2,32 @@
 include 'conn.php';
 //koneksi database
 session_start();
+error_reporting(0);
 
 $username = $_POST["username"];
 $password = $_POST["password"];
-$nama = $_POST["nama"];
-$image = $_POST["image"];
-$email = $_POST["email"];
 
 $query = mysqli_query($conn, "SELECT*FROM admin WHERE username='" . $username . "' AND password='" . $password . "'");
 $result = mysqli_fetch_assoc($query);
 if ($result > 0) {
-
     $_SESSION['status'] = "login";
-    $_SESSION['nama'] = $result['nama'];
-    $_SESSION['image'] = $result['image'];
-    $_SESSION['email'] = $result['email'];
-    $_SESSION['password'] = $result['password'];
-    $_SESSION['username'] = $result['username'];
-    header("location:home.php");
+    $_SESSION['nama'] = $nama;
+    $_SESSION['image'] = $image;
+    $_SESSION['email'] = $email;
+    $_SESSION['password'] = $password;
+    $_SESSION['username'] = $username;
+    echo "
+    <script>
+    location.replace ('home.php');
+    </script>
+    ";
 } else {
-    header("location:index.php?pesan=gagal");
+    
+    echo "<script>
+    alert('Email atau password Anda salah. Silahkan coba lagi!');
+    location.replace('index.php');
+    </script>";
+    
 }
+?>
+

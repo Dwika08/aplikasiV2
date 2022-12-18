@@ -113,8 +113,7 @@
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img class="profile-pic me-2" src="../html/img/user/<?php echo $_SESSION['image']; ?>" />
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $_SESSION['nama']; ?></span>
+                                <img class="profile-pic me-2" src="../html/img/user/person-icon.png" />
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li>
@@ -172,7 +171,7 @@
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="home.php">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="pages-data-table.php">Data Tabel</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">Data Pelaporan</li>
                                 </ol>
                             </nav>
@@ -270,8 +269,8 @@
                                                 <?php } ?>
                                             </td>
                                             <td>
-                                            <!-- <a class="edit" href="editKejadian.php?id=<?php echo $row['id_rekap']; ?>">Edit</a> | -->
-                                            <a href="#" data-bs-toggle="modal" data-bs-target="#hapus<?php echo $row['id_rekap']; ?>">Hapus</a>
+                                                <!-- <a class="edit" href="editKejadian.php?id=<?php echo $row['id_rekap']; ?>">Edit</a> | -->
+                                                <a href="#" data-bs-toggle="modal" data-bs-target="#hapus<?php echo $row['id_rekap']; ?>">Hapus</a>
                                             </td>
                                         </tr>
                                 </tbody>
