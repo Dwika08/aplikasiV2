@@ -11,7 +11,7 @@
  Target Server Version : 100427
  File Encoding         : 65001
 
- Date: 14/12/2022 17:31:50
+ Date: 18/12/2022 15:22:41
 */
 
 SET NAMES utf8mb4;
@@ -26,7 +26,6 @@ CREATE TABLE `admin`  (
   `nama` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `username` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `image` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id_admin`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
@@ -34,7 +33,7 @@ CREATE TABLE `admin`  (
 -- ----------------------------
 -- Records of admin
 -- ----------------------------
-INSERT INTO `admin` VALUES (1, 'Dwika Julian azhar', 'Admin123', 'admin123', 'dwika-julian-azhar.jpeg', 'zembelldwika@gmail.com');
+INSERT INTO `admin` VALUES (1, 'Dwika Julian azhar', 'Admin123', 'admin123', 'zembelldwika@gmail.com');
 
 -- ----------------------------
 -- Table structure for bencana_detail
@@ -431,7 +430,7 @@ CREATE TABLE `rekap_bencana`  (
   INDEX `desa_detail`(`id_desa_detail`) USING BTREE,
   CONSTRAINT `bencana_detail` FOREIGN KEY (`id_bencana_detail`) REFERENCES `bencana_detail` (`id_bencana_detail`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `des_kec_dtl` FOREIGN KEY (`id_desa_detail`) REFERENCES `desa_detail` (`id_desa_detail`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 35 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 39 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of rekap_bencana
@@ -447,7 +446,9 @@ INSERT INTO `rekap_bencana` VALUES (8, '2022-01-11', 3, 'Sukiswo', '5 Jiwa', '1'
 INSERT INTO `rekap_bencana` VALUES (9, '2022-01-11', 3, 'Mundori', '4 Jiwa', '2', '1', 269, NULL, '1 Rumah', NULL, NULL, NULL, NULL, 'Intensitas hujan yang tinggi memicu terjadinya talud pengaman rumah berukuran +- P : 15 m T : m ambruk, hal ini juga dipicu kurangnya suling2 pada Talud tersebut dan kurangnya penataan saluran pembuangan air rumah tangga.', '50.000.000', 'beji.png', '-7.252993', '109.603951', 1);
 INSERT INTO `rekap_bencana` VALUES (10, '2022-01-14', 2, 'Priyono', '6 Jiwa', '1', '4', 237, NULL, '1 Rumah', NULL, NULL, NULL, NULL, 'Pada pukul 11.00 wib pemilik dan beberapa karyawan meninggalkan ruang setelah selesai memproduksi tahu namun saat ditinggal untuk beristirahat bara api ditungku belum mati/padam seluruhnya.\r\nDimungkinkan percikan sisa bara api mengenai tumpukan kayu disamping tungku dan menimbulkan kobaran api yang kemudian menjalar keseluruh ruang produksi tahu.\r\nKobaran api baru diketahui oleh salah satu warga atas nama Ardi (33) yang baru pulang dari luar kota pada pukul 00.30 WIB kemudian saksi mata membangunkan warga untuk melakukan pemadaman dengan menggunakan peralatan seadanya. Pemadaman selesai pada pukul 02.00 WIB', '8.000.000', 'wanayasa.png', '-7.248573', '109.745965', 1);
 INSERT INTO `rekap_bencana` VALUES (15, '2022-01-26', 2, 'Sugianto', '6 Jiwa', '1', '4', 145, NULL, NULL, '1 Rumah', NULL, NULL, NULL, 'Sekitar pukul 20:20 Wib .warga melihat api di samping rumahnya pak sugianto ,kemudian berteriak,serta melakukan pemadaman dengan menyiram air dari kolam dibantu oleh warga sekitar.', '1.750.000', 'linggasari.png', '-7.374762', '109.658307', 1);
-INSERT INTO `rekap_bencana` VALUES (33, '2022-12-14', 2, 'ada', '2', '8', '1', 123, '2 Rumah', '0', '0', '0', '5', '4', 'asdasd', '', 'rn_image_picker_lib_temp_68cf3a83-49c4-4118-94e7-6103875f4dbd.jpg', '-7.404933245702085', '109.28078155964613', 0);
-INSERT INTO `rekap_bencana` VALUES (34, '0000-00-00', 1, 'Ds', '5', '8', '8', 123, '1', '3', '3', '2', '8', '6', 'Shf', '55.958', 'rn_image_picker_lib_temp_789275d7-be48-4e94-ae43-b36eb86e2eb2.jpg', '-7.402054292440441', '109.28830616176128', 0);
+INSERT INTO `rekap_bencana` VALUES (35, '2022-02-03', 3, 'Khusdi', '3 Jiwa', '2', '2', 226, NULL, '1 Rumah', NULL, NULL, NULL, NULL, 'Hujan deras  dari jam 10.30-14.30.mengakibatkan tebing  rumah sekaligus pondasi Bp.Qodir sepanjang -+12 m, tinggi -+4 m yg tinggal di  rt 5. Rw.3..dusun buntu  desa bakal longsor, sehingga teras lantai rumah bagian samping sepanjang -+7 meter menggantung dan mengakibatkan lubang di dalam rumah bapak qodir dan sebagian isi rumah bapak qodir ikut jatuh kebawah bersama dengan matrial longsor tsb. dan kondisi tersebut mengakibatkan tertutupnya jalan desa menuju obyek wisata yg sdg dibangun dan sebagian tanah / sisa pondasi yang longsor mengenai teras rumah warga yang berada dibawahnya.', '4.659.000', 'bakal.png', '-7.21998', '109.888245', 0);
+INSERT INTO `rekap_bencana` VALUES (36, '2022-01-28', 4, 'ahmad sutaro', '5 jiwa', '1', '4', 11, NULL, NULL, '1 Rumah', NULL, NULL, NULL, 'Pada hari Jumat Tanggal 28 Januari 2022 sekira Jam 14.30 WIB, telah terjadi  hujan deras disertai angin di Desa Karangsalam, yang mengakibatkan beberapa pohon tumbang dan menimpa rumah milik warga. Sehingga  menyebabkan beberapa rumah milik warga rusak pada bagian atap rumah.\r\nAtas kejadian tersebut Petugas bersama dengan warga masyarakat bergotong royong membantu membersihkan ranting dan batang pohon yang menimpa rumah korban.', '', 'kemranggon.png', '-7.488245', '109.383461', 0);
+INSERT INTO `rekap_bencana` VALUES (37, '2022-03-13', 4, 'rudiyanto', '6 jiwa', '4', '4', 198, NULL, NULL, '1 Rumah', NULL, NULL, NULL, 'Hujan deras disertai angin di wilayah kecamatan Pagentan khususnya di Desa Plumbungan yang berlangsung selama dua jam menyebabkan pohon tumbang', '4.500.000', 'plumbungan.png', '-7.299117', '109.804761', 0);
+INSERT INTO `rekap_bencana` VALUES (38, '2022-06-16', 4, 'firman', '2', '1', '9', 23, NULL, NULL, '1 Rumah', NULL, NULL, NULL, 'Pada hari Kamis, pukul 15.30 terjadi hujan dengan intensitas sedang hingga lebat disertai angin di Wilayah Kec. Purwareja Kalmpok, pukul 16.00 terjadi pohon tumbang yang mengenai rumah warga,', '950.000', 'klampok.png', '-7.470298', '109.423613', 0);
 
 SET FOREIGN_KEY_CHECKS = 1;
